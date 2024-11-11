@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
                 "json:target/cucumber.json"
         },
         monochrome = true,
-        tags = "@Links"
+        tags = "@calculatorGPA"
 )
 public class TestRun {
     // This class remains empty

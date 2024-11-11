@@ -11,6 +11,8 @@ import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
+import java.awt.*;
+
 public class CalculatorTestSteps extends Base {
 
     CalculatorHomePage calculatorHomePage;
@@ -178,6 +180,36 @@ public class CalculatorTestSteps extends Base {
     @And("enter humidity {string}")
     public void enterHumidity(String humidity) {
         calculatorHomePage.setEnterHumidity(humidity);
+
+    }
+    @When("the user clicks on marks Grade  calculator button")
+    public void theUserClicksOnMarksGradeCalculatorButton() {
+        fitnessCalculatorPage.setGradECalculatorBtn();
+    }
+
+    @Then("user enters valid subjects {string}>")
+    public void userEntersValidSubjects(String subjects) {
+        fitnessCalculatorPage.setSubjectsTF(subjects);
+
+    }
+
+    @And("user enters valid marks credits {string}")
+    public void userEntersValidMarksCredits(String marks) {
+        fitnessCalculatorPage.setSubjectMarksTF(marks);
+    }
+
+    @And("user enters valid Grade {string}")
+    public void userEntersValidGrade(String grade) throws AWTException {
+        fitnessCalculatorPage.setMarksGradeDropDown();
+    }
+
+    @Then("user click on calculate marks button")
+    public void userClickOnCalculateMarksButton() {
+        fitnessCalculatorPage.setClickCalculateMarksBtn();
+    }
+    @And("verify that calculated marks result is displayed")
+    public void verifyThatCalculatedMarksResultIsDisplayed() {
+        Assert.assertTrue(fitnessCalculatorPage.setMarksResultDisplayed());
 
     }
     @After

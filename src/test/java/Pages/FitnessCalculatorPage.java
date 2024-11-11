@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 public class FitnessCalculatorPage extends Base {
 
@@ -49,6 +51,20 @@ public class FitnessCalculatorPage extends Base {
     private WebElement setClickOnSubmit;
     @FindBy(xpath = "//h2[normalize-space()='Result']")
     private WebElement resultDisplayed;
+
+    @FindBy(xpath = "//a[text()='GPA Calculator']")
+    private WebElement gradECalculatorBtn;
+    @FindBy(xpath = "//input[@name='da4']")
+    private WebElement subjectsTF;
+    @FindBy(xpath = "//input[@name='ca4']")
+    private WebElement subjectMarksTF;
+    @FindBy(xpath = "//select[@name='la4']")
+    private WebElement marksGradeDropDown;
+    @FindBy(xpath = "(//input[@name='x'])[1]")
+    private WebElement calculateMarksBtn;
+    @FindBy(xpath = "//font[normalize-space()='Overall GPA']")
+    private WebElement marksResult;
+
 
 
 
@@ -114,6 +130,36 @@ public class FitnessCalculatorPage extends Base {
         return resultDisplayed.isDisplayed();
 
     }
+    public void setGradECalculatorBtn(){
+        gradECalculatorBtn.click();
+
+    }
+    public void setSubjectsTF(String subjects){
+        subjectsTF.sendKeys(subjects);
+
+    }
+    public void setSubjectMarksTF(String marks){
+        subjectMarksTF.sendKeys(marks);
+    }
+    public void setMarksGradeDropDown() throws AWTException {
+        marksGradeDropDown.click();
+        Robot r2 = new Robot();
+        r2.keyPress(KeyEvent.VK_DOWN);
+        r2.keyRelease(KeyEvent.VK_DOWN);
+        r2.keyPress(KeyEvent.VK_ENTER);
+        r2.keyRelease(KeyEvent.VK_ENTER);
+
+    }
+    public void setClickCalculateMarksBtn(){
+        calculateMarksBtn.click();
+
+    }
+    public boolean setMarksResultDisplayed(){
+
+        wait.until(ExpectedConditions.visibilityOf(marksResult));
+        return marksResult.isDisplayed();
+    }
+
 
 
 }
