@@ -94,7 +94,7 @@ public class CalculatorTestSteps extends Base {
     @And("user click on BMI link calculator")
     public void userClickOnBMILinkCalculator() {
         fitnessCalculatorPage.clickBmiLink();
-        System.out.println("BMI");
+
 
     }
 
