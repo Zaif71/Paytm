@@ -161,7 +161,7 @@ public class CalculatorTestSteps extends Base {
     @And("verify that result is displayed")
     public void verifyThatResultIsDisplayed() {
         Assert.assertTrue(fitnessCalculatorPage.isResultDisplay());
-        System.out.println("Body fat percentage Result graph is shown");
+        System.out.println("Body fat percentage result graph is shown");
 
 
     }
