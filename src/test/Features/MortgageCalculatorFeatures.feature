@@ -107,5 +107,6 @@ Examples:
         | Hindi    | 8     | B     |
         | Math     | 7     | B     |
         | Science  | 5     | C     |
+        | SST      | 8     | A     |
 
 

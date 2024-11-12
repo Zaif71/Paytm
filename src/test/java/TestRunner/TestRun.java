@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
                 "json:target/cucumber.json"
         },
         monochrome = true,
-        tags = "@fitness"
+        tags = "@Invalid"
 )
 public class TestRun {
     // This class remains empty
