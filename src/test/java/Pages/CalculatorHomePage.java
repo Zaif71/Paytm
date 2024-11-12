@@ -61,6 +61,17 @@ public class CalculatorHomePage extends Base {
     private WebElement airTemperature;
     @FindBy (xpath = "//input[@name='humidity']")
     private WebElement humidity;
+    @FindBy (xpath = "//a[text()='Percentage Calculator']")
+    private WebElement percentageBtn;
+    @FindBy (id = "cpar1")
+    private WebElement percentageTF;
+    @FindBy (id = "cpar2")
+    private WebElement numTF;
+    @FindBy (xpath="(//input[@name='x'])[1]")
+    private WebElement clickResultPercentage;
+    @FindBy (xpath="//h2[contains(text(), 'Result')]")
+    private WebElement resultPercentage;
+
 
 
     public void enterLoanAmount(String loanAmount) throws InterruptedException {
@@ -138,6 +149,27 @@ public class CalculatorHomePage extends Base {
     public void setEnterHumidity(String humidity){
         airTemperature.clear();
         airTemperature.sendKeys(humidity);
+    }
+    public void setPercentageBtn(){
+        percentageBtn.click();
+
+    }
+    public void setPercentageTF(String percentage){
+        percentageTF.sendKeys(percentage);
+
+    }
+    public void setNumTF(String number){
+        numTF.sendKeys(number);
+
+
+    }
+    public void setClickResultPercentage(){
+        clickResultPercentage.click();
+    }
+    public boolean setResultPercentage(){
+        wait.until(ExpectedConditions.visibilityOf(resultPercentage));
+        return resultPercentage.isDisplayed();
+
     }
 
 }

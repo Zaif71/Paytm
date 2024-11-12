@@ -109,4 +109,16 @@ Examples:
         | Science  | 5     | C     |
         | SST      | 8     | A     |
 
-
+      @percentileCalculator
+      Scenario Outline: verify that percentage calculator is working
+        And user click on math link math calculator page should displayed
+        Then user clicks on percentage calculator
+        And user enter valid "<percentage>"percentage
+        And user enter valid "<number>"
+        Then user clicks on calculate percentage button
+        Then calculated percentage result should display
+        Examples:
+          | percentage | number |
+          | 17         | 33800  |
+          | 29         | 899    |
+          | 37         | 19945  |
