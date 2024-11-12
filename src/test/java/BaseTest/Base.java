@@ -18,7 +18,7 @@ public class Base {
             this.driver = new ChromeDriver();
             this.driver.manage().window().maximize();
             this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            this.driver.get("https://www.calculator.net/mortgage-calculator.html")
+            this.driver.get("https://www.calculator.net/mortgage-calculator.html");
     }
     @AfterClass
     public void breakk() {
