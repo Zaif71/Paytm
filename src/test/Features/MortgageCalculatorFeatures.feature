@@ -73,6 +73,7 @@ Examples:
       | 30  | 180    | 60     | 45   | 180   |
       | 24  | 175    | 70     | 40   | 200   |
       | 28  | 165    | 65     | 50   | 210   |
+      | 30  | 170    | 70     | 60   | 200   |
 
 
     @temperatureCalculator
@@ -90,4 +91,21 @@ Examples:
         | 30          | 80       |
         | 35          | 90       |
         | 20          | 55       |
-        |20           |29        |
+        | 20          | 29       |
+    @calculatorGPA
+    Scenario Outline: verify that GPA calculator is working
+      And user click on others calculator link page should open
+      When the user clicks on marks Grade  calculator button
+      Then user enters valid subjects "<subjects>">
+      And user enters valid marks credits "<marks>"
+      And user enters valid Grade "<grade>"
+      Then user click on calculate marks button
+      And verify that calculated marks result is displayed
+      Examples:
+        | subjects | marks | grade |
+        | English  | 9     | A     |
+        | Hindi    | 8     | B     |
+        | Math     | 7     | B     |
+        | Science  | 5     | C     |
+
+
