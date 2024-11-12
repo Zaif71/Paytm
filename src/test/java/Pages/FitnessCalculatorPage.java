@@ -155,7 +155,6 @@ public class FitnessCalculatorPage extends Base {
 
     }
     public boolean setMarksResultDisplayed(){
-
         wait.until(ExpectedConditions.visibilityOf(marksResult));
         return marksResult.isDisplayed();
     }

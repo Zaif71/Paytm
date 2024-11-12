@@ -212,12 +212,42 @@ public class CalculatorTestSteps extends Base {
         Assert.assertTrue(fitnessCalculatorPage.setMarksResultDisplayed());
 
     }
+
+    @Then("user clicks on percentage calculator")
+    public void userClicksOnPercentageCalculator() {
+        calculatorHomePage.setPercentageBtn();
+    }
+
+    @And("user enter valid {string}percentage")
+    public void userEnterValidPercentage(String percentage) {
+        calculatorHomePage.setPercentageTF(percentage);
+
+    }
+
+    @And("user enter valid {string}")
+    public void userEnterValid(String number) {
+        calculatorHomePage.setNumTF(number);
+    }
+    @Then("user clicks on calculate percentage button")
+    public void userClicksOnCalculatePercentageButton() {
+        calculatorHomePage.setClickResultPercentage();
+    }
+
+    @Then("calculated percentage result should display")
+    public void calculatedPercentageResultShouldDisplay() {
+        Assert.assertTrue(calculatorHomePage.setResultPercentage());
+
+    }
+
+
     @After
     public void tearDown()
     {
         breakk();
 
     }
+
+
 
 
 
