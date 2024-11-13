@@ -122,3 +122,12 @@ Examples:
           | 17         | 33800  |
           | 29         | 899    |
           | 37         | 19945  |
+
+      @multipleExecution
+      Scenario: verify that one step executed multiple times
+        Given the user is on homepage
+        When the user enter valid data into multiple text fields
+          | 50000 | 90000 |
+          | 60000 | 55000 |
+          | 70000 | 35000 |
+          | 8500  | 3300  |
