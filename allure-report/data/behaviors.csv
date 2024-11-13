@@ -1,4 +1,6 @@
 "BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
 "0","","0","Home loan Interest Calculator","3","0","check whether calculator Button is working","0"
-"0","","0","Home loan Interest Calculator","1","0","verify different links are working on homepage","0"
+"0","","0","Home loan Interest Calculator","3","0","verify that percentage calculator is working","0"
 "0","","0","Home loan Interest Calculator","4","0","Verify calculator button with invalid inputs","0"
+"0","","0","Home loan Interest Calculator","1","0","verify that one step executed multiple times","0"
+"0","","0","Home loan Interest Calculator","1","0","verify different links are working on homepage","0"

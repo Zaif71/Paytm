@@ -3,6 +3,7 @@ package StepDefinitions;
 import BaseTest.Base;
 import Pages.CalculatorHomePage;
 import Pages.FitnessCalculatorPage;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -238,6 +239,11 @@ public class CalculatorTestSteps extends Base {
         Assert.assertTrue(calculatorHomePage.setResultPercentage());
 
     }
+    @When("the user enter valid data into multiple text fields")
+    public void theUserEnterValidDataIntoMultipleTextFields(DataTable dataTable) throws InterruptedException {
+        calculatorHomePage.setMultipleExecution(dataTable);
+
+    }
 
 
     @After
@@ -246,8 +252,6 @@ public class CalculatorTestSteps extends Base {
         breakk();
 
     }
-
-
 
 
 
