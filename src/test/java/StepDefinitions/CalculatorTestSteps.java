@@ -11,6 +11,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.BeforeClass;
 
 import java.awt.*;
 
@@ -38,12 +39,9 @@ public class CalculatorTestSteps extends Base {
         System.out.println("homepage is displayed");
 
     }
-
-
     @And("user enter valid downPayment in % {string}")
     public void userEnterValidDownPaymentIn(String downPayment) throws InterruptedException {
         calculatorHomePage.setEnterDownPayment(downPayment);
-
     }
     @And("user enter valid loan term{string}")
     public void userEnterValidLoanTerm(String loanTerm) throws InterruptedException {
@@ -53,21 +51,16 @@ public class CalculatorTestSteps extends Base {
     public void userEnterValidInterestRateIn(String interestRate) throws InterruptedException {
         calculatorHomePage.setEnterLoanInterestRateTF(interestRate);
     }
-
     @And("click on calculate button")
     public void clickOnCalculateButton() throws InterruptedException {
-
         calculatorHomePage.clickOnCalculateButton();
         System.out.println("Button is clicked");
     }
-
     @Then("calculated result should be shown")
     public void calculatedResultShouldBeShown() {
         Assert.assertTrue(calculatorHomePage.isResultDisplayed());
         System.out.println("calculated Result graph is shown");
-
     }
-
     @Then("error message should be display {string}")
     public void errorMessageShouldBeDisplay(String errorMessage) {
         calculatorHomePage.setError1(errorMessage);
@@ -97,7 +90,6 @@ public class CalculatorTestSteps extends Base {
     @And("user click on BMI link calculator")
     public void userClickOnBMILinkCalculator() {
         fitnessCalculatorPage.clickBmiLink();
-
 
     }
 
@@ -159,13 +151,11 @@ public class CalculatorTestSteps extends Base {
     public void clickOnCalculate() {
         fitnessCalculatorPage.setSetClickOnSubmit();
 
-
     }
     @And("verify that result is displayed")
     public void verifyThatResultIsDisplayed() {
         Assert.assertTrue(fitnessCalculatorPage.isResultDisplay());
         System.out.println("Body fat percentage result graph is shown");
-
 
     }
     @Then("user click on temperature calculator")
@@ -211,7 +201,6 @@ public class CalculatorTestSteps extends Base {
     @And("verify that calculated marks result is displayed")
     public void verifyThatCalculatedMarksResultIsDisplayed() {
         Assert.assertTrue(fitnessCalculatorPage.setMarksResultDisplayed());
-
     }
 
     @Then("user clicks on percentage calculator")
@@ -222,9 +211,7 @@ public class CalculatorTestSteps extends Base {
     @And("user enter valid {string}percentage")
     public void userEnterValidPercentage(String percentage) {
         calculatorHomePage.setPercentageTF(percentage);
-
     }
-
     @And("user enter valid {string}")
     public void userEnterValid(String number) {
         calculatorHomePage.setNumTF(number);
@@ -237,15 +224,15 @@ public class CalculatorTestSteps extends Base {
     @Then("calculated percentage result should display")
     public void calculatedPercentageResultShouldDisplay() {
         Assert.assertTrue(calculatorHomePage.setResultPercentage());
-
     }
     @When("the user enter valid data into multiple text fields")
     public void theUserEnterValidDataIntoMultipleTextFields(DataTable dataTable) throws InterruptedException {
         calculatorHomePage.setMultipleExecution(dataTable);
-
     }
-
-
+    @And("user navigate to multiple links present on the financial page and click one each link")
+    public void userNavigateToMultipleLinksPresentOnTheFinancialPageAndClickOneEachLink() {
+        fitnessCalculatorPage.clickOnMultipleLinksWithDynamicXpath();
+    }
     @After
     public void tearDown()
     {

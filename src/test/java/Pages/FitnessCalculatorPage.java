@@ -2,6 +2,7 @@ package Pages;
 
 import BaseTest.Base;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -64,6 +65,7 @@ public class FitnessCalculatorPage extends Base {
     private WebElement calculateMarksBtn;
     @FindBy(xpath = "//font[normalize-space()='Overall GPA']")
     private WebElement marksResult;
+
 
 
 
@@ -135,6 +137,7 @@ public class FitnessCalculatorPage extends Base {
 
     }
     public void setSubjectsTF(String subjects){
+        subjectsTF.clear();
         subjectsTF.sendKeys(subjects);
 
     }
@@ -158,7 +161,28 @@ public class FitnessCalculatorPage extends Base {
         wait.until(ExpectedConditions.visibilityOf(marksResult));
         return marksResult.isDisplayed();
     }
+    public void clickOnMultipleLinksWithDynamicXpath(){
 
+        int index = 3;
+        while (index <= 10) {
+            try {
+
+                String dynamicXPath = "(//a)[" + index + "]";
+                WebElement link = driver.findElement(By.xpath(dynamicXPath));
+                System.out.println("Clicking on: " + link.getText());
+                link.click();
+                Thread.sleep(3000);
+                driver.navigate().back();
+            } catch (org.openqa.selenium.NoSuchElementException e) {
+                System.out.println("Link not found at index: " + index + ", skipping...");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            index++;
+        }
+
+
+            }
 
 
 }

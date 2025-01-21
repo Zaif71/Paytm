@@ -72,7 +72,6 @@ public class ValidLoginStepDef extends Base {
 
     }
 
-
     public void tearDown()
     {
         breakk();
