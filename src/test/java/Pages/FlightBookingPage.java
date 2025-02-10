@@ -39,7 +39,6 @@ public FlightBookingPage(WebDriver driver) {
         }
 
 
-
         public void navigateToPaytm(){
             driver.get("https://paytm.com/");
 

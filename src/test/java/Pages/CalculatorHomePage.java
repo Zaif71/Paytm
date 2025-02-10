@@ -1,9 +1,7 @@
 package Pages;
-
 import BaseTest.Base;
 import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

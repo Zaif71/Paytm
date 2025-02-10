@@ -178,7 +178,8 @@ public class FitnessCalculatorPage extends Base {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            index++;
+            index++; //this chnges made by panbkej
+
         }
 
 
